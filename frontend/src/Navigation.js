@@ -12,7 +12,7 @@ import React from "react";
     render() {
         return(
             <>
-                <Navbar variant="dark">
+                <Navbar >
                     <Container>
                         <Navbar.Brand href="/">Names and Robots</Navbar.Brand>
                         <Nav className="me-auto">

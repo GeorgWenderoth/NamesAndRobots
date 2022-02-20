@@ -13,6 +13,8 @@ import React from "react";
 import Navigation from "./Navigation";
 import {Register} from "./Register";
 import {Profil} from "./Profil";
+import {NewPassword} from "./NewPassword";
+import {ResetPassword} from "./ResetPassword";
 
 
 const App = () => {
@@ -36,6 +38,10 @@ const App = () => {
             <Route path="/register" element={<Register/>}/>
 
             <Route path="/profil" element={<Profil/>}/>
+
+            <Route path="/newPassword" element={<NewPassword/>}/>
+
+            <Route path="/resetPassword" element={<ResetPassword/>}/>
 
         </Routes>
     </Router>

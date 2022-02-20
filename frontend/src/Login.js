@@ -64,6 +64,22 @@ export class Login extends React.Component {
         })
     }
 
+    handlePasswordReset= (e) => {
+       // e.preventDefault();
+        axios({
+            method: "post",
+            url: "http:///localhost:8080/api/auth/resetpassword",
+            data: {
+
+                email: this.state.mail,
+
+            }
+        }).then(response => {
+            this.setState({message: response.data.message});
+            console.log(response.data);
+        })
+    }
+
     handleUsernameChange = (event) =>{
         this.setState({username: event.target.value});
     }
@@ -85,13 +101,7 @@ export class Login extends React.Component {
                 <h1>Login</h1>
 
                 <Form onSubmit={this.handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+
 
                     <Form.Group className="mb-3" controlId="formBasicUserName">
                         <Form.Label>User name</Form.Label>
@@ -99,6 +109,15 @@ export class Login extends React.Component {
                                       onChange={(e) => this.setState({username: e.target.value})}/>
                         <Form.Text className="text-muted">
                             Your username my be public.
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" value={this.state.mail}
+                                      onChange={(e)=> this.setState({mail: e.target.value})}/>
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
                         </Form.Text>
                     </Form.Group>
 
@@ -113,9 +132,12 @@ export class Login extends React.Component {
                     <Button variant="primary" type="submit" >
                         Submit
                     </Button>
-
                 </Form>
+                <Button variant="secondary" type="submit" onClick={this.handlePasswordReset}>
+                    Password vergessen
+                </Button>
                 <Link to={"/register"}><p>Noch keinen Account?</p></Link>
+                <Link to={"/resetPassword"}><p>Passwort zurücksetzen</p></Link>
                 <div >
 
                     <label >
