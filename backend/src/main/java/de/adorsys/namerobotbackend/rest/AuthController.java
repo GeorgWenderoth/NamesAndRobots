@@ -1,5 +1,10 @@
 package de.adorsys.namerobotbackend.rest;
 
+import de.adorsys.namerobotbackend.mail.AuthCode;
+import de.adorsys.namerobotbackend.mail.EmailService;
+import de.adorsys.namerobotbackend.mail.Generator;
+import de.adorsys.namerobotbackend.request.AuthCodeRequest;
+import de.adorsys.namerobotbackend.request.ResetRequest;
 import de.adorsys.namerobotbackend.security.jwt.JwtUtils;
 import de.adorsys.namerobotbackend.domain.ERole;
 import de.adorsys.namerobotbackend.domain.Role;
@@ -52,7 +57,7 @@ public class AuthController {
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+                new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
@@ -120,5 +125,30 @@ public class AuthController {
         userRepository.save(user);
         return ResponseEntity.ok(new MessageResponse("User registered succsessfully!"));
     }
+
+    @PostMapping("/resetpassword")
+    public ResponseEntity<?> resetPassword(@Valid @RequestBody ResetRequest resetRequest) throws Exception {
+        if (!userRepository.existsByEmail(resetRequest.getEmail())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Email is not in use!"));
+        }
+
+        EmailService  emailService = new EmailService("smtp.gmail.com", 587, "namesandrobots@gmail.com", "9eg37/Bn");
+
+        emailService.sendMail(resetRequest.getEmail());
+        return ResponseEntity.ok(new MessageResponse("Check your email"));
+    }
+
+    @PostMapping("/authcode")
+    public ResponseEntity<?> authcode(@Valid @RequestBody AuthCodeRequest authCodeRequest) throws Exception{
+        for (AuthCode authCode : AuthCode.getAuthList()) {
+            if (authCode.equals(authCodeRequest.getAuth())){
+                return ResponseEntity.ok(new MessageResponse("Auth Code Veryfied"));
+            }
+        }
+        return ResponseEntity.badRequest().body(new MessageResponse("False Code"));
+    }
+
 }
 

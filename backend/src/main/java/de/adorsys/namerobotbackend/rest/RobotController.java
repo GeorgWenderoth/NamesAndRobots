@@ -46,4 +46,21 @@ public class RobotController {
         return new ResponseEntity<>(robotService.updateRobotElement(element.getId(), element.getBewertungsWert(), element.getName(), element.getBeschreibung()),HttpStatus.OK);
     }
 
+  /*  @CrossOrigin
+    public String holeNamen(){
+        URL url = new URL("http://names.drycodes.com/10");
+        HttpURLConnection con =(HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer content = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+            content.append(inputLine);
+        }
+        in.close();
+    } */
+
+
+
 }
