@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93cb868-9230-4431-8d2d-91c566f65ce5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/mail/AuthCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/mail/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/mail/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/mail/SendMail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/request/AuthCodeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/request/ResetRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NewPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/request/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/RestSchnittstelleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/RestSchnittstelleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/RobotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/rest/RobotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/de/adorsys/namerobotbackend/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResetPassword.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,19 +53,6 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -125,7 +94,10 @@
       <workItem from="1644418088687" duration="762000" />
       <workItem from="1644419633016" duration="17000" />
       <workItem from="1644419750186" duration="1297000" />
-      <workItem from="1644499560390" duration="52682000" />
+      <workItem from="1644499560390" duration="53535000" />
+      <workItem from="1645397525941" duration="182000" />
+      <workItem from="1646040800324" duration="818000" />
+      <workItem from="1646735454427" duration="39000" />
     </task>
     <servers />
   </component>
