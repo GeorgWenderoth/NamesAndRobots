@@ -26,6 +26,7 @@ export class Login extends React.Component {
             url: "http://127.0.0.1:8080/api/auth/signin",
             data: {
                 username: this.state.username,
+               // email: this.state.mail,
                 password: this.state.passwort
             }
         }).then(response => {

@@ -9,8 +9,9 @@ import java.util.Set;
 @Entity
 @Table (name = "users",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "username"),
-                @UniqueConstraint(columnNames = "email")
+            @UniqueConstraint(columnNames = "email"), //Getauscht (um login error zu fixen), email war vorher unten
+            @UniqueConstraint(columnNames = "username")
+                
         })
 
 public class UserElement {

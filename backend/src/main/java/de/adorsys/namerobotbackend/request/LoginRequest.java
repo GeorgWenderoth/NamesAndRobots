@@ -3,12 +3,20 @@ package de.adorsys.namerobotbackend.request;
 import javax.validation.constraints.NotBlank;
 
 public class LoginRequest {
+
+    /* //email raus weil usernamePaswordAuthenticationtoken nimmt username und password
     @NotBlank // Hier verändern
     private String email;
+    */
 
     @NotBlank
     private String password;
 
+
+    @NotBlank 
+    private String username;
+
+  /* 
     public String getEmail() {
         return email;
     }
@@ -16,8 +24,9 @@ public class LoginRequest {
     public void setEmail(String email) {
         this.email = email;
     }
+    */
 
-   /* public String getUsername() {
+    public String getUsername() {
         return username;
     }
 
@@ -25,7 +34,7 @@ public class LoginRequest {
         this.username = username;
     }
 
-    */
+    
 
     public String getPassword() {
         return password;

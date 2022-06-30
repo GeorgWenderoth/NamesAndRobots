@@ -55,14 +55,14 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
+        
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername() /*loginRequest.getEmail()*/, loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
 
-        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal(); // was machen wir hier, wie funktionieren die klammern?
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal(); // was machen wir hier, wie funktionieren die klammern? // Irgendwo In User Imp Muss das Problem Liegen
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
@@ -73,6 +73,22 @@ public class AuthController {
                 userDetails.getEmail(),
                 roles));
     }
+
+    @PostMapping("/logintest")
+    public ResponseEntity<?> authenticateTestUser(@Valid @RequestBody LoginRequest loginRequest) {
+        
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername() /*loginRequest.getEmail()*/, loginRequest.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
+        
+
+        return ResponseEntity.ok(jwt
+                );
+    }
+
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
